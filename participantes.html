@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participantes - Reunião de Planificação 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos adicionais para a tabela de participantes */
+        .tabela-participantes {
+            width: 100%;
+            overflow-x: auto;
+            margin: 30px 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .tabela-participantes table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        .tabela-participantes th {
+            background: #d4a537;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .tabela-participantes td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #2d3748;
+        }
+        
+        .tabela-participantes tr:hover {
+            background: #f7fafc;
+        }
+        
+        .categoria-tabela {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #1a202c;
+            border-left: 4px solid #d4a537;
+            padding-left: 15px;
+        }
+        
+        .parceiros-card {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .parceiros-lista {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .parceiro-item {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: #d4a537;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .total-participantes {
+            background: #fef3c7;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="emblema">
+                    <img src="assets/images/logo.png" alt="Emblema" class="logo-img">
+                </div>
+                <div class="titulo-logo">
+                    <span class="pequeno">Serviço da Saúde da Cidade de Maputo</span>
+                    <h1>Reunião de Planificação</h1>
+                    <span class="subtitulo">Maputo 2026</span>
+                </div>
+            </div>
+            <nav class="nav">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="participantes.html" class="active">Participantes</a></li>
+                    <li><a href="documentos.html">Documentos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Lista de Participantes</h1>
+                <p>Reunião de Planificação - 30 de Junho a 03 de Julho de 2026</p>
+            </div>
+        </section>
+
+        <section class="participantes">
+            <div class="container">
+                
+                <!-- Direção e Chefias -->
+                <h2 class="categoria-tabela"> Direção e Chefias</h2>
+                <div class="tabela-participantes">
+                    <table>
+                        <thead>
+                            <tr><th>#</th><th>Função</th><th>Proveniência</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Directora do Serviço de Saúde da Cidade de Maputo</td><td>SSCM</td></tr>
+                            <tr><td>2</td><td>Médica Chefe da Cidade de Maputo</td><td>SSCM</td></tr>
+                            <tr><td>3</td><td>Directora Municipal de Saúde</td><td>PSQV</td></tr>
+                            <tr><td>4</td><td>Chefe da Unidade de Controlo Interno</td><td>SSCM</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Chefes de Departamento -->
+                <h2 class="categoria-tabela"> Chefes de Departamento</h2>
+                <div class="tabela-participantes">
+                    <table>
+                        <thead><tr><th>#</th><th>Função</th><th>Proveniência</th></tr></thead>
+                        <tbody>
+                            <tr><td>5</td><td>Chefe do Departamento de Administração e Finanças</td><td>SSCM</td></tr>
+                            <tr><td>6</td><td>Chefe do Departamento de Recursos Humanos</td><td>SSCM</td></tr>
+                            <tr><td>7</td><td>Chefe do Departamento de Estudos, Planificação e Comunicação</td><td>SSCM</td></tr>
+                            <tr><td>8</td><td>Chefe do Departamento de Saúde</td><td>SSCM</td></tr>
+                            <tr><td>9</td><td>Chefe do Departamento de Saúde Pública</td><td>PSQV</td></tr>
+                            <tr><td>10</td><td>Chefe do Departamento de Planificação, Monitoria e Avaliação</td><td>PSQV</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Chefes de Repartição Autónoma -->
+                <h2 class="categoria-tabela"> Chefes de Repartição Autónoma</h2>
+                <div class="tabela-participantes">
+                    <table>
+                        <thead><tr><th>#</th><th>Função</th><th>Proveniência</th></tr></thead>
+                        <tbody>
+                            <tr><td>11</td><td>Chefe da Repartição de Aquisições</td><td>SSCM</td></tr>
+                            <tr><td>12</td><td>Chefe da Repartição de Logística e Assistência Farmacêutica</td><td>SSCM</td></tr>
+                            <tr><td>13</td><td>Chefe da Repartição de Assuntos Jurídicos</td><td>SSCM</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Chefes de Repartição -->
+                <h2 class="categoria-tabela"> Chefes de Repartição</h2>
+                <div class="tabela-participantes">
+                    <table>
+                        <thead><tr><th>#</th><th>Função</th><th>Proveniência</th></tr></thead>
+                        <tbody>
+                            <tr><td>14</td><td>Chefe da Repartição de Saúde Pública</td><td>SSCM</td></tr>
+                            <tr><td>15</td><td>Chefe da Repartição de Assistência Médica</td><td>SSCM</td></tr>
+                            <tr><td>16</td><td>Chefe da Repartição de Administração e Finanças</td><td>SSCM</td></tr>
+                            <tr><td>17</td><td>Chefe da Secretaria</td><td>SSCM</td></tr>
+                            <tr><td>18</td><td>Chefe da Repartição de Património</td><td>SSCM</td></tr>
+                            <tr><td>19</td><td>Chefe da Repartição de Recursos Humanos</td><td>SSCM</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Hospitais -->
+                <h2 class="categoria-tabela"> Hospitais</h2>
+                <div class="tabela-participantes">
+                    <table>
+                        <thead><tr><th>#</th><th>Função</th><th>Proveniência</th></tr></thead>
+                        <tbody>
+                            <tr><td>20</td><td>Directora do Hospital Geral José Macamo</td><td>HGJM</td></tr>
+                            <tr><td>21</td><td>Administrador do Hospital Geral José Macamo</td><td>HGJM</td></tr>
+                            <tr><td>22</td><td>Responsável de Planificação</td><td>HGJM</td></tr>
+                            <tr><td>23</td><td>Director do Hospital Geral de Mavalane</td><td>HGM</td></tr>
+                            <tr><td>24</td><td>Administradora do Hospital Geral de Mavalane</td><td>HGM</td></tr>
+                            <tr><td>25</td><td>Responsável de Planificação</td><td>HGM</td></tr>
+                            <tr><td>26</td><td>Directora do Hospital Geral de Chamanculo</td><td>HGC</td></tr>
+                            <tr><td>27</td><td>Administradora do Hospital Geral de Chamanculo</td><td>HGC</td></tr>
+                            <tr><td>28</td><td>Responsável de Planificação</td><td>HGC</td></tr>
+                            <tr><td>29</td><td>Directora do Hospital Geral Polana Caniço</td><td>HGPC</td></tr>
+                            <tr><td>30</td><td>Administrador do Hospital Geral Polana Caniço</td><td>HGPC</td></tr>
+                            <tr><td>31</td><td>Responsável de Planificação</td><td>HGPC</td></tr>
+                            <tr><td>32</td><td>Directora do Hospital Psiquiátrico de Infulene</td><td>HPI</td></tr>
+                            <tr><td>33</td><td>Administradora do Hospital Psiquiátrico de Infulene</td><td>HPI</td></tr>
+                            <tr><td>34</td><td>Responsável de Planificação</td><td>HPI</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Instituto de Ciências de Saúde -->
+                <h2 class="categoria-tabela"> Instituto de Ciências de Saúde de Infulene</h2>
+                <div class="tabela-participantes">
+                    <table>
+                        <thead><tr><th>#</th><th>Função</th><th>Proveniência</th></tr></thead>
+                        <tbody>
+                            <tr><td>35</td><td>Directora do Instituto de Ciências de Saúde de Infulene</td><td>ICSI</td></tr>
+                            <tr><td>36</td><td>Administradora do Instituto de Ciências de Saúde de Infulene</td><td>ICSI</td></tr>
+                            <tr><td>37</td><td>Responsável de Planificação</td><td>ICSI</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Centros -->
+                <h2 class="categoria-tabela"> Centros de Exames Médicos e Higiene Ambiental</h2>
+                <div class="tabela-participantes">
+                    <table>
+                        <thead><tr><th>#</th><th>Função</th><th>Proveniência</th></tr></thead>
+                        <tbody>
+                            <tr><td>38</td><td>Director do Centro de Exames Médicos</td><td>CEM</td></tr>
+                            <tr><td>39</td><td>Director do Centro de Higiene Ambiental</td><td>CHA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Direcções Distritais -->
+                <h2 class="categoria-tabela"> Direcções Distritais de Saúde</h2>
+                <div class="tabela-participantes">
+                    <table>
+                        <thead><tr><th>#</th><th>Função</th><th>Proveniência</th></tr></thead>
+                        <tbody>
+                            <tr><td>40</td><td>Director Distrital de Saúde de Nhlamankulu</td><td>Nhlamankulu</td></tr>
+                            <tr><td>41</td><td>Responsável de Planificação de Nlhamankulu</td><td>Nhlamankulu</td></tr>
+                            <tr><td>42</td><td>Directora Distrital de Saúde de KaMpfumu</td><td>KaMpfumu</td></tr>
+                            <tr><td>43</td><td>Responsável de Planificação de KaMpfumu</td><td>KaMpfumu</td></tr>
+                            <tr><td>44</td><td>Director Distrital de Saúde de KaMaxakeni</td><td>Kamaxakeni</td></tr>
+                            <tr><td>45</td><td>Responsável de Planificação de KaMaxakeni</td><td>Kamaxakeni</td></tr>
+                            <tr><td>46</td><td>Directora Distrital de Saúde de KaMubukwana</td><td>Kamubukwana</td></tr>
+                            <tr><td>47</td><td>Responsável de Planificação de Kamubukwana</td><td>Kamubukwana</td></tr>
+                            <tr><td>48</td><td>Directora Distrital de Saúde de KaMavota</td><td>Kamavota</td></tr>
+                            <tr><td>49</td><td>Responsável de Planificação de Kamavota</td><td>Kamavota</td></tr>
+                            <tr><td>50</td><td>Director Distrital de Saúde de KaTembe</td><td>KaTembe</td></tr>
+                            <tr><td>51</td><td>Responsável de Planificação de KaTembe</td><td>KaTembe</td></tr>
+                            <tr><td>52</td><td>Directora Distrital de Saúde de KaNyaka</td><td>KaNyaka</td></tr>
+                            <tr><td>53</td><td>Responsável de Planificação de KaNyaka</td><td>KaNyaka</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Técnicos e Assessores -->
+                <h2 class="categoria-tabela"> Técnicos e Assessores</h2>
+                <div class="tabela-participantes">
+                    <table>
+                        <thead><tr><th>#</th><th>Função</th><th>Proveniência</th></tr></thead>
+                        <tbody>
+                            <tr><td>54</td><td>Assessora Clínica TB/MR</td><td>SSCM</td></tr>
+                            <tr><td>55</td><td>Responsável Provincial do Programa da Tuberculose</td><td>SSCM</td></td>
+                            <tr><td>56</td><td>Responsável Provincial do Programa Alargado de Vacinação</td><td>SSCM</td></tr>
+                            <tr><td>57</td><td>Responsável Provincial do Programa de Nutrição</td><td>SSCM</td></tr>
+                            <tr><td>58</td><td>Responsável Provincial do Programa de Saúde Escolar</td><td>SSCM</td></tr>
+                            <tr><td>59</td><td>Responsável Provincial do Programa de Laboratório</td><td>SSCM</td></tr>
+                            <tr><td>60</td><td>Responsável Provincial do Núcleo de Investigação Científica</td><td>SSCM</td></tr>
+                            <tr><td>61</td><td>Responsável Provincial do Programa de Saúde da Mulher e Criança</td><td>SSCM</td></tr>
+                            <tr><td>62</td><td>Responsável Provincial do Sector de Infraestrutura e Equipamento de Saúde</td><td>SSCM</td></tr>
+                            <tr><td>63</td><td>Responsável Provincial do Programa de V.E</td><td>SSCM</td></tr>
+                            <tr><td>64</td><td>Responsável Provincial do Programa de VBG</td><td>SSCM</td></tr>
+                            <tr><td>65</td><td>Responsável Provincial do Sector de Estatística</td><td>SSCM</td></tr>
+                            <tr><td>67</td><td>Responsável Provincial de Saúde Mental</td><td>SSCM</td></tr>
+                            <tr><td>68</td><td>Supervisora de Enfermagem</td><td>SSCM</td></tr>
+                            <tr><td>69</td><td>Responsável Provincial de Monitoria e Avaliação</td><td>SSCM</td></tr>
+                            <tr><td>70</td><td>Responsável Provincial de Cooperação</td><td>SSCM</td></tr>
+                            <tr><td>71</td><td>Responsável Provincial da Planificação</td><td>SSCM</td></tr>
+                            <tr><td>72</td><td>Chefe do Sector de Transportes</td><td>SSCM</td></tr>
+                            <tr><td>73</td><td>Chefe do gabinete</td><td>SSCM</td></tr>
+                            <tr><td>74</td><td>Chefe da Repartição de Receitas e Orçamento</td><td>SEF</td></tr>
+                            <tr><td>75</td><td>Assessor de Monitoria e Avaliação</td><td>SSCM</td></tr>
+                            <tr><td>76</td><td>Assessora Clínica TB/MR</td><td>SSCM</td></tr>
+                            <tr><td>77</td><td>Assessor Clínico</td><td>SSCM</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Parceiros -->
+                <h2 class="categoria-tabela"> Parceiros</h2>
+                <div class="parceiros-card">
+                    <div class="parceiros-lista">
+                        <div class="parceiro-item">CCS</div>
+                        <div class="parceiro-item">PATHFINDER</div>
+                        <div class="parceiro-item">JHPiego</div>
+                        <div class="parceiro-item">AHF</div>
+                    </div>
+                </div>
+
+                <div class="total-participantes">
+                    <p><strong>Total de Participantes:</strong> 77 participantes + 4 Parceiros</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer -->
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <!-- Apenas sua imagem, sem o SVG -->
+                    <img src="assets/images/logos.png" alt="Emblema da República de Moçambique" class="logo-footer">
+                    <div>
+                      <h3>Reunião de Planificação</h3>
+                    </div>
+                </div>
+                <p class="footer-pais">Moçambique</p>
+                <p class="footer-desc">Plataforma oficial da  Reunião de Planificação do Serviço de Saúde da Cidade de Maputo.</p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                        <li><a href="participantes.html">Participantes</a></li>
+                        <li><a href="documentos.html">Documentos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Evento</h4>
+                    <ul>
+                        <li>Reunião de Planificação</li>
+                        <li>30 de Junho á 03 de julho de  2026</li>
+                        <li>Ponta de Ouro</li>
+                        <li>Província de Maputo</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:dci@misau.gov.mz">dpc@sscm.gov.mz</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Serviço da Saúde da Cidade  de Maputo. Todos os direitos reservados.</p>
+            <p class="lema-footer">"Um Plano Único, Um Orçamento Único e Uma Monitoria e Avaliação Única"</p>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+    <script>
+        // Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navList = document.getElementById('navList');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navList.classList.toggle('active');
+            });
+        }
+
+        document.querySelectorAll('.nav-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
