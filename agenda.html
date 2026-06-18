@@ -18,6 +18,165 @@
             margin: 0;
             color: #856404;
         }
+
+        .programacao-item {
+            display: flex;
+            gap: 20px;
+            padding: 16px 20px;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background 0.3s;
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            align-items: flex-start;
+        }
+
+        .programacao-item:hover {
+            background: var(--gray-bg);
+            transform: translateX(4px);
+        }
+
+        .programacao-item.destaque {
+            background: var(--primary-bg);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+        }
+
+        .programacao-item.debate {
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            border-radius: 12px;
+        }
+
+        .programacao-item.grupo {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            border-radius: 12px;
+        }
+
+        .programacao-hora {
+            min-width: 130px;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+
+        .programacao-info {
+            flex: 1;
+        }
+
+        .programacao-info .categoria {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .programacao-info .categoria.abertura { background: #d4a537; color: white; }
+        .programacao-info .categoria.plenaria { background: #9b59b6; color: white; }
+        .programacao-info .categoria.discussao { background: #48bb78; color: white; }
+        .programacao-info .categoria.logistica { background: #cbd5e0; color: #2d3748; }
+        .programacao-info .categoria.debate { background: #4299e1; color: white; }
+        .programacao-info .categoria.grupo { background: #38a169; color: white; }
+        .programacao-info .categoria.encerramento { background: #e53e3e; color: white; }
+
+        .programacao-info h3 {
+            font-size: 17px;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .programacao-info .responsavel {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+
+        .programacao-info .responsavel strong {
+            color: var(--text-dark);
+        }
+
+        .programacao-info .local {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .categoria-dia {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-left: 4px solid var(--primary);
+            padding-left: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .categoria-dia .dia-icone {
+            font-size: 28px;
+        }
+
+        .total-eventos {
+            text-align: center;
+            margin-top: 30px;
+            padding: 16px;
+            background: var(--primary-bg);
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .page-header h1 {
+            font-size: 40px;
+            color: #1a202c;
+        }
+
+        .page-header p {
+            color: #718096;
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .programacao-item {
+                flex-direction: column;
+                gap: 8px;
+                padding: 14px 16px;
+            }
+            .programacao-hora {
+                min-width: auto;
+                font-size: 13px;
+            }
+            .page-header h1 {
+                font-size: 28px;
+            }
+            .categoria-dia {
+                font-size: 20px;
+            }
+            .programacao-info h3 {
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -25,7 +184,7 @@
         <div class="container">
             <div class="logo-area">
                 <div class="emblema">
-                    <img src="assets/images/logo.png" alt="Emblema da República de Moçambique" class="logo-img">
+                    <img src="assets/images/logo.png" alt="Emblema" class="logo-img">
                 </div>
                 <div class="titulo-logo">
                     <span class="pequeno">Serviço da Saúde da Cidade de Maputo</span>
@@ -50,418 +209,455 @@
         <section class="page-header">
             <div class="container">
                 <h1>Agenda do Evento</h1>
-                <p>Ponta de Ouro, 30 de Junho a 3 de Julho de 2026</p>
+                <p>Ponta de Ouro, 01 á 4 de Julho de 2026</p>
             </div>
         </section>
 
         <section class="agenda-completa">
             <div class="container">
                 <div class="agenda-tabs">
-                    <button class="tab-btn active" data-dia="dia1">Dia 1 · 30/06</button>
-                    <button class="tab-btn" data-dia="dia2">Dia 2 · 01/07</button>
-                    <button class="tab-btn" data-dia="dia3">Dia 3 · 02/07</button>
-                    <button class="tab-btn" data-dia="dia4">Dia 4 · 03/07</button>
+                    <button class="tab-btn active" data-dia="dia1">Dia 1 · 01/07</button>
+                    <button class="tab-btn" data-dia="dia2">Dia 2 · 02/07</button>
+                    <button class="tab-btn" data-dia="dia3">Dia 3 · 03/07</button>
                 </div>
 
                 <!-- DIA 1 - 30 de Junho -->
                 <div id="dia1" class="agenda-dia active">
-                    <div class="dia-resumo">
-                        <h3>Terça-feira, 30 de Junho de 2026</h3>
-                        <p>Abertura oficial e sessões plenárias</p>
+                    <div class="categoria-dia">
+                        <span class="dia-icone"></span>
+                        Quarta-feira, 01 de Julho de 2026
                     </div>
 
-                    <div class="evento-completo">
-                        <time>11:00 – 11:15</time>
-                        <div class="evento-detalhes">
+                    <!-- 1 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 11:00 – 11:15</div>
+                        <div class="programacao-info">
                             <span class="categoria logistica">Credenciamento</span>
                             <h3>Chegada e Registo dos participantes</h3>
-                            <p>Protocolo</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Protocolo</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>11:15 – 11:30</time>
-                        <div class="evento-detalhes">
+                    <!-- 2 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 11:15 – 11:30</div>
+                        <div class="programacao-info">
                             <span class="categoria logistica">Protocolo</span>
                             <h3>Entrada do Presídium na Sala</h3>
-                            <p>Protocolo</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Protocolo</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>11:30 – 11:45</time>
-                        <div class="evento-detalhes">
+                    <!-- 3 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 11:30 – 11:45</div>
+                        <div class="programacao-info">
                             <span class="categoria plenaria">Contextualização</span>
                             <h3>Contextualização, apresentação dos Objectivos e dos Participantes</h3>
-                            <p>Chefe do Departamento de Estudos Planificação e Comunicação</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Exma. Senhora Directora do Serviço de Saúde</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo destaque">
-                        <time>11:45 – 12:00</time>
-                        <div class="evento-detalhes">
+                    <!-- 4 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 11:45 – 11:50</div>
+                        <div class="programacao-info">
+                            <span class="categoria plenaria">Intervenção</span>
+                            <h3>Intervenção do Parceiro do Primeiro Contacto</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Líder das ONG's - AHF</p>
+                            <span class="local"> Ponta de Ouro</span>
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="programacao-item destaque">
+                        <div class="programacao-hora"> 11:50 – 12:05</div>
+                        <div class="programacao-info">
                             <span class="categoria abertura">Sessão de Abertura ★</span>
                             <h3>Sessão de Abertura</h3>
-                            <p>Exma. Senhora Directora do Serviço de Saúde</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Exma. Senhora Directora do Gabinete do Secretário do Estado</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>12:00 – 12:15</time>
-                        <div class="evento-detalhes">
+                    <!-- 6 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 12:05 – 12:10</div>
+                        <div class="programacao-info">
                             <span class="categoria plenaria">Apresentação</span>
                             <h3>Apresentação da agenda</h3>
-                            <p>DEPC: Maulana José</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Chefe do Departamento de Planificação</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>12:15 – 12:35</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria plenaria">Palestra</span>
-                            <h3>Papel dos gestores no resgate dos valores morais e comportamentais dos trabalhadores de Saúde</h3>
-                            <p>Chefe do Departamento de Recursos Humanos</p>
-                            <span class="local">Ponta de Ouro</span>
+                    <!-- 7 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 12:10 – 12:30</div>
+                        <div class="programacao-info">
+                            <span class="categoria plenaria">Gestão</span>
+                            <h3>Gestão e Liderança</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Chefe do Departamento de Recursos Humanos</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>12:35 – 12:50</time>
-                        <div class="evento-detalhes">
+                    <!-- 8 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 12:30 – 12:50</div>
+                        <div class="programacao-info">
                             <span class="categoria discussao">Discussão</span>
                             <h3>Discussão</h3>
-                            <p>Todos</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Todos</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>12:50 – 13:15</time>
-                        <div class="evento-detalhes">
+                    <!-- 9 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 12:50 – 13:15</div>
+                        <div class="programacao-info">
                             <span class="categoria plenaria">Apresentação</span>
                             <h3>Apresentação dos resultados do CFDMP 2027-2029</h3>
-                            <p>DEPC</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Chefe do Departamento de Planificação</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>13:15 – 13:30</time>
-                        <div class="evento-detalhes">
+                    <!-- 10 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 13:15 – 13:30</div>
+                        <div class="programacao-info">
                             <span class="categoria discussao">Discussão</span>
                             <h3>Discussão</h3>
-                            <p>Todos</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Todos</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>13:30 – 13:50</time>
-                        <div class="evento-detalhes">
+                    <!-- 11 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 13:30 – 13:50</div>
+                        <div class="programacao-info">
                             <span class="categoria plenaria">Apresentação</span>
-                            <h3>Apresentação da metodologia de elaboração do PESOE 2027</h3>
-                            <p>SEF: Carimo Dinesse</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <h3>Apresentação da metodologia de elaboração do PESOE 2026</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> SEF: Carimo Dinesse</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo destaque">
-                        <time>13:50 – 14:50</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria debate">Painel de Debate ★</span>
+                    <!-- 12 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 13:50 – 14:25</div>
+                        <div class="programacao-info">
+                            <span class="categoria discussao">Discussão</span>
+                            <h3>Discussão</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Todos</p>
+                            <span class="local"> Ponta de Ouro</span>
+                        </div>
+                    </div>
+
+                    <!-- 13 -->
+                    <div class="programacao-item debate">
+                        <div class="programacao-hora"> 14:15 – 15:30</div>
+                        <div class="programacao-info">
+                            <span class="categoria debate">Painel de Debate</span>
                             <h3>Desafios e Oportunidades na Arrecadação de Receitas em Contexto de Défice Orçamental</h3>
-                            <p>Moderador: Zacarias João | Oradores: CEM: Alberto Muando, CHA: Gabriel Alifa, HGCH: Isaura Malate</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel">
+                                <strong>Moderador:</strong> Zacarias João<br>
+                                <strong>Oradores:</strong> CEM: Alberto Muando, CHA: Gabriel Alifa, HGCH: Isaura Malate
+                            </p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>14:50 – 15:10</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria plenaria">Apresentação</span>
-                            <h3>Prioridades para elaboração do PESOE 2027</h3>
-                            <p>DEPC: Idília da Graça</p>
-                            <span class="local">Ponta de Ouro</span>
-                        </div>
-                    </div>
-
-                    <div class="evento-completo">
-                        <time>15:10 – 15:20</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria discussao">Discussão</span>
-                            <h3>Discussão</h3>
-                            <p>Todos</p>
-                            <span class="local">Ponta de Ouro</span>
-                        </div>
-                    </div>
-
-                    <div class="evento-completo">
-                        <time>15:20 – 16:20</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria abertura">Encerramento do Dia</span>
+                    <!-- 14 -->
+                    <div class="programacao-item destaque">
+                        <div class="programacao-hora"> 15:30 – 16:00</div>
+                        <div class="programacao-info">
+                            <span class="categoria encerramento">Encerramento</span>
                             <h3>Fim dos trabalhos do primeiro dia e Almoço</h3>
-                            <p>Exma. Senhora Directora SSCM</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Exma. Senhora Directora SSCM</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
+                    </div>
+
+                    <div class="total-eventos">
+                         Total: 14 Eventos · Dia 1
                     </div>
                 </div>
 
-                <!-- DIA 2 - 01 de Julho -->
+                <!-- DIA 2 - 02 de Julho -->
                 <div id="dia2" class="agenda-dia">
-                    <div class="dia-resumo">
-                        <h3> Quarta-feira, 01 de Julho de 2026</h3>
-                        <p>Exercícios em grupo e elaboração do PESOE</p>
+                    <div class="categoria-dia">
+                        <span class="dia-icone"></span>
+                        Quinta-feira, 01 de Julho de 2026
                     </div>
 
-                    <div class="evento-completo">
-                        <time>08:00 – 08:30</time>
-                        <div class="evento-detalhes">
+                    <!-- 15 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 08:00 – 08:30</div>
+                        <div class="programacao-info">
                             <span class="categoria logistica">Entrada</span>
                             <h3>Entrada dos Participantes na sala</h3>
-                            <p>Protocolo</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Protocolo</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>08:30 – 08:50</time>
-                        <div class="evento-detalhes">
+                    <!-- 16 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 08:30 – 08:50</div>
+                        <div class="programacao-info">
                             <span class="categoria plenaria">Leitura</span>
                             <h3>Leitura da Síntese do Primeiro Dia</h3>
-                            <p>DEPC: Inácio Zevo</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> DEPC: Inácio Zevo</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>08:50 – 09:20</time>
-                        <div class="evento-detalhes">
+                    <!-- 19 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 08:50 – 09:05</div>
+                        <div class="programacao-info">
+                            <span class="categoria plenaria">Apresentação</span>
+                            <h3>Prioridades para elaboração do PESOE 2027</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Representante do MISAU</p>
+                            <span class="local"> Ponta de Ouro</span>
+                        </div>
+                    </div>
+
+                    <!-- 20 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 09:05 – 09:20</div>
+                        <div class="programacao-info">
+                            <span class="categoria discussao">Discussão</span>
+                            <h3>Discussão</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Todos</p>
+                            <span class="local"> Ponta de Ouro</span>
+                        </div>
+                    </div>
+
+                    <!-- 17 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 09:20 – 09:35</div>
+                        <div class="programacao-info">
                             <span class="categoria plenaria">Apresentação</span>
                             <h3>Balanço dos Indicadores do PQG 2025-2029</h3>
-                            <p>DEPC: Uele Nhantumbo</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> DEPC: Idilia João</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>09:20 – 10:00</time>
-                        <div class="evento-detalhes">
+                    <!-- 18 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 09:35 – 09:40</div>
+                        <div class="programacao-info">
                             <span class="categoria discussao">Discussão</span>
                             <h3>Discussão</h3>
-                            <p>Todos</p>
-                            <span class="local">Ponta de Ouro</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Todos</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo destaque">
-                        <time>10:00 – 15:00</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria grupo">Trabalho em Grupo ★</span>
-                            <h3>Exercícios em grupo (elaboração do PESOE 2026)</h3>
-                            <p>Todos os participantes</p>
-                            <span class="local">Salas de Reunião</span>
+                    <!-- 21 -->
+                    <div class="programacao-item debate">
+                        <div class="programacao-hora"> 09:40 – 10:40</div>
+                        <div class="programacao-info">
+                            <span class="categoria debate">Painel de Debate</span>
+                            <h3>Transição dos Serviços e proposta de acções para garantir a continuidade dos serviços</h3>
+                            <p class="responsavel">
+                                <strong>Moderador:</strong> Rosimina Ismael<br>
+                                <strong>Oradores:</strong> Assessor Clínico, DRH
+                            </p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>15:00 – 15:30</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria abertura">Encerramento</span>
-                            <h3>Considerações finais e Fim dos trabalhos do segundo dia</h3>
-                            <p>Exma. Senhora Directora do SSCM</p>
-                            <span class="local">Ponta de Ouro</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DIA 3 - 02 de Julho -->
-                <div id="dia3" class="agenda-dia">
-                    <div class="dia-resumo">
-                        <h3> Quinta-feira, 02 de Julho de 2026</h3>
-                        <p>Apresentações e discussão dos PESOE</p>
-                    </div>
-
-                    <div class="evento-completo">
-                        <time>08:00 – 08:30</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria logistica">Entrada</span>
-                            <h3>Entrada dos Participantes na sala</h3>
-                            <p>Protocolo</p>
-                            <span class="local">Ponta de Ouro</span>
-                        </div>
-                    </div>
-
-                    <div class="evento-completo">
-                        <time>08:30 – 09:30</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria plenaria">Plenária</span>
-                            <h3>Plenária: Distrito e Hospital</h3>
-                            <p>Distrito e Hospital</p>
-                            <span class="local">Ponta de Ouro</span>
-                        </div>
-                    </div>
-
-                    <div class="evento-completo">
-                        <time>09:30 – 10:00</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria discussao">Discussão</span>
-                            <h3>Discussão</h3>
-                            <p>Todos</p>
-                            <span class="local">Ponta de Ouro</span>
-                        </div>
-                    </div>
-
-                    <div class="evento-completo">
-                        <time>10:00 – 10:30</time>
-                        <div class="evento-detalhes">
+                    <!-- 23 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 10:40 – 11:20</div>
+                        <div class="programacao-info">
                             <span class="categoria logistica">Pausa</span>
                             <h3>Intervalo para o pequeno almoço</h3>
-                            <p>Todos</p>
-                            <span class="local">Área de Convivência</span>
+                            <p class="responsavel"><strong>Responsável:</strong> Todos</p>
+                            <span class="local"> Área de Convivência</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>10:30 – 11:00</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria plenaria">Apresentação</span>
-                            <h3>Plenária: Apresentação do PESOE RSP</h3>
-                            <p>RSP</p>
-                            <span class="local">Ponta de Ouro</span>
+                    <!-- 24 -->
+                    <div class="programacao-item grupo">
+                        <div class="programacao-hora"> 11:20 – 15:20</div>
+                        <div class="programacao-info">
+                            <span class="categoria grupo">Trabalho em Grupo</span>
+                            <h3>Exercícios em grupo (elaboração do PESOE 2026)</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Todos os participantes</p>
+                            <span class="local"> Salas de Reunião</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>11:00 – 11:30</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria discussao">Discussão</span>
-                            <h3>Discussão</h3>
-                            <p>Todos</p>
-                            <span class="local">Ponta de Ouro</span>
+                    <!-- 25 -->
+                    <div class="programacao-item destaque">
+                        <div class="programacao-hora"> 15:30</div>
+                        <div class="programacao-info">
+                            <span class="categoria encerramento">Encerramento</span>
+                            <h3>Considerações finais e Fim dos trabalhos do segundo dia</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Exma. Senhora Directora do SSCM</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
                     </div>
 
-                    <div class="evento-completo">
-                        <time>11:30 – 12:00</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria plenaria">Apresentação</span>
-                            <h3>Plenária: Apresentação do PESOE RAM</h3>
-                            <p>DEPC-NIC</p>
-                            <span class="local">Ponta de Ouro</span>
-                        </div>
-                    </div>
-
-                    <div class="evento-completo">
-                        <time>12:00 – 12:30</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria discussao">Discussão</span>
-                            <h3>Discussão</h3>
-                            <p>Todos</p>
-                            <span class="local">Ponta de Ouro</span>
-                        </div>
-                    </div>
-
-                    <div class="evento-completo destaque">
-                        <time>12:30 – 13:00</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria abertura">Encerramento ★</span>
-                            <h3>Sessão de Encerramento</h3>
-                            <p>Exma. Senhora Directora do SSCM</p>
-                            <span class="local">Ponta de Ouro</span>
-                        </div>
-                    </div>
-
-                    <div class="evento-completo">
-                        <time>13:00 – 14:00</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria logistica">Almoço</span>
-                            <h3>Almoço de Confraternização</h3>
-                            <p>Todos</p>
-                            <span class="local">Restaurante</span>
-                        </div>
+                    <div class="total-eventos">
+                         Total: 11 Eventos · Dia 2
                     </div>
                 </div>
 
-                <!-- DIA 4 - 03 de Julho -->
-                <div id="dia4" class="agenda-dia">
-                    <div class="dia-resumo">
-                        <h3>Sexta-feira, 03 de Julho de 2026</h3>
-                        <p>Reservado para actividades complementares</p>
-                    </div>
-                    
-                    <div class="atencao">
-                        <p>⚠️ <strong>Nota:</strong> O programa para o dia 03 de Julho de 2026 será divulgado oportunamente.</p>
+                <!-- DIA 3 - 03 de Julho -->
+                <div id="dia3" class="agenda-dia">
+                    <div class="categoria-dia">
+                        <span class="dia-icone"></span>
+                        Sexta-feira, 03 de Julho de 2026
                     </div>
 
-                    <div class="evento-completo">
-                        <time>--:-- – --:--</time>
-                        <div class="evento-detalhes">
-                            <span class="categoria logistica">Aguardar</span>
-                            <h3>Programa a ser definido</h3>
-                            <p>Atividades complementares</p>
-                            <span class="local">Ponta de Ouro</span>
+                    <!-- 26 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 08:00 – 08:30</div>
+                        <div class="programacao-info">
+                            <span class="categoria logistica">Entrada</span>
+                            <h3>Entrada dos Participantes na sala</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Protocolo</p>
+                            <span class="local"> Ponta de Ouro</span>
                         </div>
+                    </div>
+
+                    <!-- 27 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 08:30 – 08:50</div>
+                        <div class="programacao-info">
+                            <span class="categoria plenaria">Leitura</span>
+                            <h3>Leitura da Síntese do Segundo Dia</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> DEPC: Maulana José</p>
+                            <span class="local"> Ponta de Ouro</span>
+                        </div>
+                    </div>
+
+                    <!-- 28 -->
+                    <div class="programacao-item grupo">
+                        <div class="programacao-hora"> 08:50 – 10:00</div>
+                        <div class="programacao-info">
+                            <span class="categoria grupo">Exercício</span>
+                            <h3>Exercício de Harmonização do PESOE</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Todos</p>
+                            <span class="local"> Salas de Reunião</span>
+                        </div>
+                    </div>
+
+                    <!-- 29 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 10:00 – 10:30</div>
+                        <div class="programacao-info">
+                            <span class="categoria logistica">Pausa</span>
+                            <h3>Intervalo para o pequeno almoço</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Todos</p>
+                            <span class="local"> Área de Convivência</span>
+                        </div>
+                    </div>
+
+                    <!-- 31-37 - Plenárias -->
+                    <div class="programacao-item debate">
+                        <div class="programacao-hora"> 10:30 – 14:30</div>
+                        <div class="programacao-info">
+                            <span class="categoria debate">Plenárias</span>
+                            <h3>Plenárias: Distrito, Hospital, RAM e RSP</h3>
+                            <p class="responsavel">
+                                <strong>Apresentação do PESOE:</strong> Hospital, Distrito, RAM, RSP<br>
+                                <strong>Discussão:</strong> Todos
+                            </p>
+                            <span class="local"> Ponta de Ouro</span>
+                        </div>
+                    </div>
+
+                    <!-- 38 -->
+                    <div class="programacao-item destaque">
+                        <div class="programacao-hora"> 14:30 – 15:00</div>
+                        <div class="programacao-info">
+                            <span class="categoria encerramento">Encerramento ★</span>
+                            <h3>Sessão de Encerramento</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Exma. Senhora Directora do SSCM</p>
+                            <span class="local"> Ponta de Ouro</span>
+                        </div>
+                    </div>
+
+                    <!-- 39 -->
+                    <div class="programacao-item">
+                        <div class="programacao-hora"> 15:00 – 16:00</div>
+                        <div class="programacao-info">
+                            <span class="categoria logistica">Almoço</span>
+                            <h3>Almoço de Confraternização</h3>
+                            <p class="responsavel"><strong>Responsável:</strong> Todos</p>
+                            <span class="local"> Restaurante</span>
+                        </div>
+                    </div>
+
+                    <div class="total-eventos">
+                         Total: 8 Eventos · Dia 3
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-     <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-info">
-                <div class="footer-logo">
-                    <!-- Apenas sua imagem, sem o SVG -->
-                    <img src="assets/images/logos.png" alt="Emblema da República de Moçambique" class="logo-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Emblema" class="logo-footer">
+                        <div>
+                            <h3>Reunião de Planificação</h3>
+                        </div>
+                    </div>
+                    <p class="footer-pais">Moçambique</p>
+                    <p class="footer-desc">Plataforma oficial da Reunião de Planificação do Serviço de Saúde da Cidade de Maputo.</p>
+                </div>
+                <div class="footer-links">
                     <div>
-                      <h3>Reunião de Planificação</h3>
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="agenda.html">Agenda</a></li>
+                            <li><a href="participantes.html">Participantes</a></li>
+                            <li><a href="documentos.html">Documentos</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Evento</h4>
+                        <ul>
+                            <li>Reunião de Planificação</li>
+                            <li>30 de Junho a 02 de Julho de 2026</li>
+                            <li>Ponta de Ouro</li>
+                            <li>Província de Maputo</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li><a href="mailto:dpc@sscm.gov.mz">dpc@sscm.gov.mz</a></li>
+                        </ul>
                     </div>
                 </div>
-                <p class="footer-pais">Moçambique</p>
-                <p class="footer-desc">Plataforma oficial da  Reunião de Planificação do Serviço de Saúde da Cidade de Maputo.</p>
             </div>
-            <div class="footer-links">
-                <div>
-                    <h4>Navegação</h4>
-                    <ul>
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="agenda.html">Agenda</a></li>
-                        <li><a href="participantes.html">Participantes</a></li>
-                        <li><a href="documentos.html">Documentos</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Evento</h4>
-                    <ul>
-                        <li>Reunião de Planificação</li>
-                        <li>30 de Junho á 03 de julho de  2026</li>
-                        <li>Ponta de Ouro</li>
-                        <li>Província de Maputo</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Contacto</h4>
-                    <ul>
-                        <li><a href="mailto:dci@misau.gov.mz">dpc@sscm.gov.mz</a></li>
-                    </ul>
-                </div>
+            <div class="footer-bottom">
+                <p>© 2026 Serviço da Saúde da Cidade de Maputo. Todos os direitos reservados.</p>
+                <p class="lema-footer">"Um Plano Único, Um Orçamento Único e Uma Monitoria e Avaliação Única"</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 Serviço da Saúde da Cidade  de Maputo. Todos os direitos reservados.</p>
-            <p class="lema-footer">"Um Plano Único, Um Orçamento Único e Uma Monitoria e Avaliação Única"</p>
-        </div>
-    </div>
-</footer>
-
+    </footer>
 
     <script>
         // Menu Mobile
@@ -469,13 +665,13 @@
         const navList = document.getElementById('navList');
 
         if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.addEventListener('click', function() {
                 navList.classList.toggle('active');
             });
         }
 
-        document.querySelectorAll('.nav-list a').forEach(link => {
-            link.addEventListener('click', () => {
+        document.querySelectorAll('.nav-list a').forEach(function(link) {
+            link.addEventListener('click', function() {
                 navList.classList.remove('active');
             });
         });
@@ -484,31 +680,20 @@
         const tabBtns = document.querySelectorAll('.tab-btn');
         const agendaDias = document.querySelectorAll('.agenda-dia');
 
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const dia = btn.getAttribute('data-dia');
+        tabBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const dia = this.getAttribute('data-dia');
                 
-                tabBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+                tabBtns.forEach(function(b) {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
                 
-                agendaDias.forEach(d => d.classList.remove('active'));
+                agendaDias.forEach(function(d) {
+                    d.classList.remove('active');
+                });
                 document.getElementById(dia).classList.add('active');
             });
-        });
-
-        // Animações
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-up, .evento-completo').forEach(el => {
-            el.classList.add('fade-up');
-            observer.observe(el);
         });
     </script>
 </body>
